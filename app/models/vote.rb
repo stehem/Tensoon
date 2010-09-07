@@ -1,6 +1,6 @@
 class Vote < ActiveRecord::Base
 belongs_to :user
-
+belongs_to :story
 
 def self.finduser(login)
 User.find_by_login(login)
