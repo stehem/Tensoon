@@ -1,0 +1,23 @@
+actionmailer --version 2.3.8
+actionpack --version 2.3.8
+activerecord --version 2.3.8
+activeresource --version 2.3.8
+activesupport --version 2.3.8
+aws-s3 --version 0.6.2
+builder --version 2.1.2
+configuration --version 1.1.0
+heroku --version 1.9.14
+json_pure --version 1.4.6
+launchy --version 0.3.7
+mime-types --version 1.16
+nokogiri --version 1.4.3.1
+paperclip --version 2.3.3
+rack --version 1.1.0
+rails --version 2.3.8
+rake --version 0.8.7
+rest-client --version 1.4.2
+sanitize --version 1.2.1
+unicode --version 0.3.1
+will_paginate --version 2.3.14
+xml-simple --version 1.0.12
+
