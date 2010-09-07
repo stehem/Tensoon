@@ -1,0 +1,87 @@
+<div class="commheader">Commentaires</div>
+	<% @story.comments.each do |f| %>
+	<% div_for f do %>
+
+		<span class ="infos">Posté par <%= f.user_login  %> le <%= l f.created_at  %></span><br/>
+		<%= f.commentaire %><br/>
+
+
+<% if current_user %>
+		<%= link_to_remote image_tag("/images/thumb_up.png"), :url => { :action => 			"vote", :controller => "comments" , :id => f.id , :story_id => @story.id, :type 		=> "pos" } , :loading => "$('loading#{f.id.to_s}').show();", :loaded => "$('loading#{f.id.to_s}').hide();"%>
+
+		<%= link_to_remote image_tag("/images/thumb_down.png"), :url => { :action => 		"vote", :controller => "comments" , :id => f.id , :story_id => @story.id,:type => 			"neg" } , :loading => "$('loading#{f.id.to_s}').show();", :loaded => "$('loading#{f.id.to_s}').hide();" %>
+
+<%= image_tag "ajax-loader.gif", :style => "display: none;", :id => "loading#{f.id}" %>
+<% else %>
+
+		<%=  image_tag("/images/thumb_up.png" , :style => "opacity:0.5;" )  %>
+
+		<%=  image_tag("/images/thumb_down.png", :style => "opacity:0.5;" ) %>
+
+
+
+
+
+
+<% end %>
+
+
+			<%= "<div id='comment_vote_" + f.id.to_s + "'>"%>
+			<%= f.votpos.to_s + " positifs et " + f.votneg.to_s + " négatifs" %>
+			<%="</div>"%>
+		<br/>
+<div id="fmsg<%= f.id %>" class="flashcomms"></div>
+		<% end %>
+               
+	<% end %>
+
+
+
+
+<% if current_user %>
+
+<div id="comments_form">
+<h2>Commenter</h2>
+
+<% form_for(:comment, @comment, :url => { :controller => "comments", :action => "poster" } , :html => {:class => "form"}) do |f| %>
+
+	<%= f.label :commentaire , "Votre commentaire" %>
+
+
+
+<script src="/ckeditor/ckeditor.js?1273163963" type="text/javascript"></script> 
+
+
+
+
+
+
+<div class="area">
+	<%= f.text_area :commentaire ,:cols => 60, :rows => 8 %></br>
+</div>
+	<%= f.hidden_field :story_id, :value => @story.id %>
+        <%= f.hidden_field :user_id, :value => current_userid %>
+	<%= f.hidden_field :user_login, :value => session[:login] %><br/>
+<div class="submit">
+	<%= f.submit "Ajouter un commentaire" , :class => "big_button green_button" %>
+</div> 
+<% end %>
+</div> 
+
+<% else %>
+<div id="footcomment">
+<h2><%= link_to "Identifiez vous" , :controller => "sessions" , :action => "login" %>  pour poster un commentaire</h2>
+</div> 
+<% end %>
+
+<script type="text/javascript">
+CKEDITOR.replace( 'comment[commentaire]',
+    {
+        toolbar : 'Basic',
+        uiColor : '#A9D1EB',
+height:"150", width:"600" 
+    });
+</script>
+
+
+

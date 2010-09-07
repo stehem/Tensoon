@@ -1,0 +1,15 @@
+development:
+  bucket: tensoonprod
+  access_key_id: AKIAIE2ZIXZCQ7UTZA5Q
+  secret_access_key: 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
+
+test:
+  bucket: tensoonprod
+  access_key_id: AKIAIE2ZIXZCQ7UTZA5Q
+  secret_access_key: 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
+
+production:
+  bucket: tensoonprod
+  access_key_id: AKIAIE2ZIXZCQ7UTZA5Q
+  secret_access_key: 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
+

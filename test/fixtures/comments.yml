@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  user_login: MyString
+  commentaire: MyString
+  votpos: 1
+  votneg: 1
+
+two:
+  user_id: 1
+  user_login: MyString
+  commentaire: MyString
+  votpos: 1
+  votneg: 1

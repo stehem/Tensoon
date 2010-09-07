@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  titre: MyString
+  poster: MyString
+  source: MyString
+  category: MyString
+  snip: MyString
+  votes: 1
+
+two:
+  titre: MyString
+  poster: MyString
+  source: MyString
+  category: MyString
+  snip: MyString
+  votes: 1

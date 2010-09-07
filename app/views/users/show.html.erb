@@ -1,0 +1,32 @@
+<% setcurrent("Home") %>
+
+<h1><%= @user.login %></h1>
+
+<div class="moncompte">
+<%= image_tag @user.avatar.url(:thumb) %><br/>
+Membre depuis : <span class="result"><%= l @user.created_at %></span><br/>
+Nombre d'articles soumis : <span class="result"><%= @nb %></span><br/>
+Nombre de votes : <span class="result"><%= @user.votes.size %></span><br/>
+Nombre de commentaires : <span class="result"><%= @user.comments.size %></span><br/><br/>
+
+Nom : <span class="result"><%= @user.nom %></span><br/>
+Ville : <span class="result"><%= @user.ville %></span><br/>
+Société : <span class="result"><%= @user.societe %></span><br/><br/>
+Facebook : <span class="result"><% unless !@user.facebook %><%= link_to @user.facebook , @user.facebook %><% end %></span><br/>
+Linkedin : <span class="result"><% unless !@user.linkedin %><%= link_to @user.linkedin , @user.linkedin %><% end %></span><br/>
+Twitter : <span class="result"><% unless !@user.twitter %><%= link_to @user.twitter , @user.twitter %><% end %><br/></span><br/>
+Blog/Site : <span class="result"><% unless !@user.blog %><%= link_to @user.blog , @user.blog %><% end %><br/></span><br/>
+Profil consulté récemment par : <span class="result">
+<% unless !@b %>
+<% @b.each do |f| %><%= link_to f , {:controller=>'users',:action=>'show',:user => "#{f}"} %> <% end %>
+<% end %></span>
+<br/><br/>
+
+
+</div>
+
+
+
+
+
+

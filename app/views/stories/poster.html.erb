@@ -1,0 +1,28 @@
+    <h1>Créer un post</h1>
+
+  <% setcurrent("Poster un article") %>
+
+    <% form_for(:story, @story, :url => { :controller => "stories", :action => "poster" }) do |f| %>
+      <%= f.error_messages %>
+
+<fieldset>
+
+ <%= f.label :titre , "Titre" %><br/>
+<span class="formdetails">100 caractères maximum.<br/>
+ <%= f.text_field :titre %><br/>
+ <%= f.label :url , "URL de l'article" %><br/>
+ <%= f.text_field :url %><br/>
+ <%= f.label :snip , "Résumé" %><br/>
+<span class="formdetails">Présentez l'article en un minimum de 300 caractères (quatre phrases), pas de copier/coller du contenu de l'article lui même.<br/>
+ <%= f.text_area :snip , :size => "60x3" %><br/>
+ <%= f.label :category , "Categorie" %><br/>
+ <%= f.select(:category , [nil, 'SEO','PPC', 'Social Media', 'Analytics', 'Display', 'Usabilité', 'Affiliation']) %><br/><br/>
+<%= f.check_box :rules %> J'ai lu les <a href="/stories/rules" class="lbOn">consignes</a> concernant les articles.<br/><br/>
+
+      <%= f.submit "Créer un post" , :class => "big_button green_button" %>
+    <% end %>
+
+</fieldset>
+
+<br/>
+

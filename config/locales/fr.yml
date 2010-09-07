@@ -1,0 +1,98 @@
+fr:
+  pagination:
+    next: "Suivant" 
+    prev: "Précédent" 
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+      
+    day_names: [Dimanche, Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi]
+    abbr_day_names: [Dim, Lun, Mar, Mer, Jeu, Ven, Sam]
+      
+    # Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names: [~, Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Aout, Septembre, Octobre, Novembre, Decembre]
+    abbr_month_names: [~, Jan, Fév, Mar, Avr, Mai, Juin, Juil, Aou, Sep, Oct, Nov, Dec]
+    # Used in date_select and datime_select.
+    order:
+      - :month
+      - :day
+      - :year
+
+  time:
+    formats:
+      default: "%a %d %b %Y à %H:%M"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    am: "am"
+    pm: "pm"
+      
+# Used in array.to_sentence.
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " and "
+      last_word_connector: ", and "
+
+  activerecord:
+    errors:
+      template:
+        header: "Erreur(s)"
+        body: "Une ou plusieurs erreurs sont survenues"
+      models:
+        user:
+          attributes:
+            login:
+              blank: "ne peut pas être vide."
+              taken: "est déja utilisé."
+              too_long: "ne peut pas dépasser 12 caractères."
+            password: 
+              blank: "ne peut pas être vide."
+            email:
+              invalid: "n'est pas une adresse email valide."
+              too_long: "ne peut pas dépasser 30 caractères."
+            societe:
+              invalid: "n'est pas une url valide."
+              too_long: "ne peut pas dépasser 30 caractères."
+            blog:
+              invalid: "n'est pas une url valide."
+              too_long: "ne peut pas dépasser 30 caractères."
+            twitter:
+              invalid: "n'est pas une url valide."
+              too_long: "ne peut pas dépasser 30 caractères."
+            linkedin:
+              invalid: "n'est pas une url valide."
+              too_long: "ne peut pas dépasser 30 caractères."
+            facebook:
+              invalid: "n'est pas une url valide."
+              too_long: "ne peut pas dépasser 30 caractères."    
+        session:
+          attributes:
+            login:
+              blank: "ne peut pas être vide."
+            password: 
+              blank: "ne peut pas être vide."
+        story:
+          attributes:
+            titre:
+              blank: "ne peut pas être vide."
+              too_long: "ne peut pas excéder 100 caractères."
+            source:
+              blank: "ne peut pas être vide."
+            category:
+              blank: "ne peut pas être vide."
+            url:
+              invalid: "n'est pas une url valide."
+              blank: "ne peut pas être vide."
+            snip:
+              too_short: "doit contenir au moins 300 caractères."
+              blank: "ne peut pas être vide."
+            delai:
+              invalid: ": vous ne pouvez poster qu'un article par heure."
+            rules:
+              accepted: "Vous devez prendre connaissance des consignes de soumission d'article."
+ 

@@ -1,0 +1,131 @@
+<div id="submainright">
+
+<div class="newstories">
+<div class="headerlast10">Derniers articles</div>
+<% @last10.each do |f| %>
+<a href="/<%=f.id.to_s + f.prettytitre %>"><%= f.titre %></a><br/>
+<% end %>
+</div>
+
+<div class="newstories">
+<div class="headerlast10">Derniers commentaires</div>
+<% @last10c.each do |f| %>
+<% unless !f %>
+<a href="/<%= f.story.id.to_s + f.story.prettytitre %>"><%= truncate(Sanitize.clean(f.commentaire), :omission => "...", :length => 100) %></a> <br/>
+<% end %>
+<% end %>
+</div>
+
+
+
+
+</div>
+
+
+<div id="submainleft">
+
+
+
+
+
+
+
+<% @tensoon.each do |f| %>
+<% div_for f do %>
+
+
+
+<div id="votes" >
+	<div id="image-wrapper">
+	<span id= <%= '"vote' + f.id.to_s + '">' %><%= f.votesnb %></span>
+	</div>
+
+	<span id=<%= '"votelink' + f.id.to_s + '"' %> class="votelink">
+	<a href="#" onclick="new Ajax.Request('/votes/vote?story_id=<%=f.id.to_s%>', {asynchronous:true, evalScripts:true, onLoaded:function(request){$('loading<%=f.id.to_s%>').hide();}, onLoading:function(request){$('loading<%=f.id.to_s%>').show();}, parameters:'authenticity_token=' + encodeURIComponent('1RIoVZEKhS7+X103H1voFXmi8CKXmIznFOQvg3QJ7rI=')}); return false;">Voter</a>
+	</span>
+
+        
+         <%= image_tag "ajax-loader.gif", :style => "display: none;", :id => "loading#{f.id}" %>
+	
+ 	
+	
+</div>
+
+
+<div class="storyright">
+
+<div class="storytitre">
+
+<a href="/<%=f.id.to_s + f.prettytitre %>"><%=f.titre %></a>
+
+</div>
+
+
+<div id="avinfos">
+
+<div id="avatar" >
+<%= image_tag f.avatarurl %>
+</div>
+
+<div class="infos">
+<%= "Posté par " %><a href="/users/show/<%= f.poster %>"><%= f.poster %></a>
+ <%= l f.created_at  %><br/>
+<%= "Source: "%><a href="<%= f.url %>" rel="nofollow"><%= f.source %></a><br/>
+
+
+<%= "Catégorie: " %><a href="/?cat1=Home&cat2=<%= URI.escape(f.category) %>"><%= f.category %></a>
+
+</div>
+
+</div>
+
+<div class="snip">
+<%= f.snip %>
+</div>
+
+
+<ul class="comms">
+<li><%= image_tag "comments.gif" %></li>
+
+
+
+<li><span class="nbcomms">
+
+<% if f.comments.size > 0 %>
+<a href="/<%=f.id.to_s + f.prettytitre %>"><%= f.comments.size  %> Commentaires</a>
+<% else %>
+<a href="/<%=f.id.to_s + f.prettytitre %>">Commenter</a>
+<% end %>
+
+
+
+</span></li>
+
+</ul>
+
+<div class="tw">
+<a href="http://twitter.com/share?url=<%= f.twurl %>" class="twitter-share-button" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+</div>
+
+<div class="bz">
+<a title="Publier sur Google Buzz" class="google-buzz-button" href="http://www.google.com/buzz/post?url=<%= f.bzurl %>" data-button-style="small-button" data-locale="fr"></a>
+<script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script>
+</div>
+
+
+<div class="fb">
+<iframe src="http://www.facebook.com/plugins/like.php?locale=fr_FR&href=<%= f.fburl %>&amp;layout=button_count&amp;show_faces=true&amp;width=50&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:25px;" allowTransparency="true"></iframe>
+</div>
+
+<div class="storybottom">
+</div>
+
+</div>
+
+
+
+<% end %>
+<% end %>
+
+<%= will_paginate @tensoon %>
+

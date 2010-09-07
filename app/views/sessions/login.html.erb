@@ -1,0 +1,30 @@
+<% #prevurl %>
+ <span class="flash"><%= flash[:notice] %></span>  
+
+  <h1>S'identifier</h1>
+
+    <% form_for(:session, @session, :url => { :controller => "sessions", :action => "login" }) do |f| %>
+      <%= f.error_messages %>
+
+	<fieldset>
+     
+        <%= f.label 'Login' %><br/>
+        <%= f.text_field :login %><br/>
+   
+        <%= f.label 'Mot de passe' %><br/>
+        <%= f.password_field :password %><br/><br/>
+
+
+
+<input class="green_button big_button" id="session_submit" name="commit" type="submit" value="S'identifier" />
+
+
+    <% end %>
+
+	</fieldset>
+
+<br/><br/>
+
+ <%= session[:return_to] %>
+
+

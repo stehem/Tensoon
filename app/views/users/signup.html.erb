@@ -1,0 +1,56 @@
+<h1>Créer un compte</h1>
+ 
+    <% form_for(:user, @user, :url => { :controller => "users", :action => "signup" }, :html => { :multipart => true }) do |f| %>
+      <%= f.error_messages.gsub(/Avatar file size file size must be between 0 and 104857.6 bytes./ , "La taille de l'image est limitée à 100kb.") %>
+<span style="color:#FFA61F;"><%= flash[:error] %></span>
+    
+	<fieldset>
+
+        <%= f.label 'Identifiant *' %><br/>
+        <%= f.text_field :login %><br/>
+ 
+        <%= f.label 'Mot de passe *' %><br/>
+        <%= f.password_field :password %><br/>
+  
+        <%= f.label 'Confirmer le mot de passe *' %><br/>
+        <%= f.password_field :password_confirmation %><br/>
+
+        
+	<%= f.label :photo, "Avatar *" %><br/>
+<span class="formdetails">Choisissez une image qui sera associée à votre compte<br/>
+Poids maximum 100kb <%=link_to "Google Image" , "http://www.google.fr/imghp?hl=fr&tab=vi"%></span>
+      	<%= f.file_field :avatar %><br/><br/>
+
+<span class="formdetails">Les informations ci-dessous sont facultatives et seront affichées sur la page de votre profil: <br/>
+        <%= f.label 'Email public'%><br/>
+        <%= f.text_field :email %><br/>
+
+        <%= f.label 'Ville' %><br/>
+        <%= f.text_field :ville %><br/>
+
+        <%= f.label 'Société (url)' %><br/>
+        <%= f.text_field :societe %><br/>
+
+        <%= f.label 'Blog ou site (url)' %><br/>
+        <%= f.text_field :blog %><br/>
+
+        <%= f.label 'Twitter (url)' %><br/>
+        <%= f.text_field :twitter %><br/>
+
+        <%= f.label 'Linkedin (url)' %><br/>
+        <%= f.text_field :linkedin %><br/>
+
+        <%= f.label 'Facebook (url)' %><br/>
+        <%= f.text_field :facebook %><br/><br/>
+<span class="formdetails">Saisissez les deux mots suivants (séparés par un espace):</span>
+<%= recaptcha_tags(:display => {:theme => 'clean'}) %>
+
+	<br/>
+   
+      <%= f.submit "Créer mon compte" , :class => "big_button green_button" %>
+    <% end %>
+
+	</fieldset>	
+
+<br/>
+

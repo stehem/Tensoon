@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head> 
+<title>Tensoon</title>
+<% noindex %>
+<%=  @noindex  %> 
+<%=  stylesheet_link_tag "styles"  %> 
+<%= javascript_include_tag :defaults %> 
+<link href="/stylesheets/lightbox.css?1283595028" media="screen" rel="stylesheet" type="text/css" /> 
+<script src="/javascripts/lightbox.js?1273163963" type="text/javascript"></script> 
+
+</head>
+<body class="gradient">
+
+<div id="main">
+
+<div id ="top">
+
+<div class="subheader">
+<span style="color:#EF7114;"> <%= flash[:message] %></span>
+<% unless current_user %>
+<a href="/users/signup">Créer un compte</a>
+<a href="/sessions/login">S'identifier</a>
+<% end %>
+
+<% if current_user %>
+<span style="color:#EF7114;"><%= "Identifié en tant que #{@current_user}" %></span>
+<a href="/sessions/logout">Deconnexion</a>
+<% end %>
+<a href="/stories/poster">Creer un post</a>
+</div>
+
+
+
+
+
+<div id="logo">
+<%= link_to image_tag("text3642.png") , root_url %>
+<br/><br/>
+</div>
+
+
+
+
+<div class="invertedshiftdown">
+<ul>
+<% menu = Array["Home","Dernières Actus","Poster un article","Mon Compte"] %>
+<li <%= 'class="current"' if @current == menu[0] %>> <a href="/">Home</a></li>
+<li <%= 'class="current"' if @current == menu[1] %>> <a href="/?cat1=Derni%C3%A8res+Actus">Dernières Actus</a></li>
+<li <%= 'class="spec"' if @current == menu[2] %>> <a href="/stories/poster">Poster un article</a></li>
+<li <%= 'class="spec"' if @current == menu[3] %>> <a href="/moncompte">Mon Compte</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<ul class="submenu" 
+<% if @current != menu[0] && @current != menu[1] %>
+style="display:none;" 
+<% end %>  
+>
+
+<% links = Array["SEO","PPC","Social Media","Analytics","Display","Usabilité","Affiliation"] %>
+<% links.each do |f| %>
+<% if f == @current2 %>
+
+<% if @current == "Dernières Actus" %>
+<li class="current"> <%= link_to f , :controller => "tensoon", :action => "index", :cat1 => "Dernières Actus" , :cat2 => f %></li>
+
+
+<% else %>
+<li class="current"> <%= link_to f , :controller => "tensoon", :action => "index", :cat1 => "Home" , :cat2 => f %></li>
+<% end %>
+
+<% else %>
+
+
+<% if @current == "Dernières Actus" %>
+<li><%= link_to f , :controller => "tensoon", :action => "index", :cat1 => "Dernières Actus" , :cat2 => f %></li>
+
+<% else %>
+
+<li><%= link_to f , :controller => "tensoon", :action => "index", :cat1 => "Home" , :cat2 => f %></li>
+<% end %>
+
+
+<% end %>
+<% end %>
+</ul> 
+
+
+
+
+
+ 
+<%= yield %> 
+
+</div>
+</body>
+</html>

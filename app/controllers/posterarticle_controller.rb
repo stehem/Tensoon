@@ -1,0 +1,2 @@
+class PosterarticleController < ApplicationController
+end

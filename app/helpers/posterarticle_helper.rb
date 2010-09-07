@@ -1,0 +1,2 @@
+module PosterarticleHelper
+end

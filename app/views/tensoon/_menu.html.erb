@@ -1,0 +1,24 @@
+<div class="invertedshiftdown">
+<ul>
+<% menu = Array["Home", "New" , "Revised" , "Tools" , "CSS" , "Forums"] %>
+<% menu.each do |f| %>
+<% if f == @current %>
+<li class="current"> <%= link_to f , :controller => "tensoon", :action => "index" , :cat1 => f %></li>
+<% else %>
+<li><%= link_to f ,:controller => "tensoon", :action => "index" , :cat1 => f %></li>
+<% end %>
+<% end %>
+</ul>
+</div>
+
+
+<ul class="submenu">
+<% links = Array["SEO","PPC","Social Media","Analytics","Display","Usabilité","Affiliation"] %>
+<% links.each do |f| %>
+<% if f == @current2 %>
+<li class="current"> <%= link_to f , :controller => "tensoon", :action => "index", :cat1 => "Home" , :cat2 => f %></li>
+<% else %>
+<li><%= link_to f , :controller => "tensoon", :action => "index", :cat1 => "Home" , :cat2 => f %></li>
+<% end %>
+<% end %>
+</ul> 

@@ -1,0 +1,19 @@
+<% if @comm_votpos_upd %>
+<%= @comm_votpos_upd.to_s %>
+<% else %>
+<%= @comment.votpos.to_s %>
+<% end %>
+<%= " positifs et " %>
+<% if @comm_votneg_upd %>
+<%= @comm_votneg_upd.to_s %>
+<% else %>
+<%= @comment.votneg.to_s %>
+<% end %>
+<%= " negatifs" %>
+
+
+
+
+
+
+

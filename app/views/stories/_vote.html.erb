@@ -1,0 +1,13 @@
+<% if current_user %>
+
+<% if alreadyvoted(f.id) %>
+<%= "<div id='opacity'>"%><%=  image_tag("/images/vote.png") %><%= "</div>" %>
+<% end %>
+
+<% if !alreadyvoted(f.id) %>
+<%= link_to_remote image_tag("/images/vote.png"), :url => { :action => "vote", :controller => "votes", :story_id => f.id  } %>
+<% end %>
+
+<% else %>
+<%= link_to_remote image_tag("/images/vote.png"), :url => { :action => "votesignup", :controller => "votes"  } %>
+<% end %>

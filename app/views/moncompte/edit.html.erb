@@ -1,0 +1,54 @@
+<% setcurrent("Mon Compte") %>
+<h1>Mon Compte : <%= @user.login %></h1>
+
+<div class="moncompte">
+
+<%= image_tag @user.avatar.url(:thumb) %><br/>
+Membre depuis : <span class="result"><%= l @user.created_at %></span><br/>
+Nombre d'articles soumis : <span class="result"><%= @nb %></span><br/>
+Nombre de votes : <span class="result"><%= @user.votes.size %></span><br/>
+Nombre de commentaires : <span class="result"><%= @user.comments.size %></span><br/><br/>
+
+    <% form_for(:user, @user, :url => { :controller => "moncompte", :action => "edit" }, :html => { :multipart => true }) do |f| %>
+      <%= f.error_messages %>
+<span style="color:#FFA61F;"><%= flash[:error] %></span>
+
+<%= f.label :photo, "Avatar *" %><br/>
+      	<%= f.file_field :avatar %><br/>
+
+        <%= f.label 'Prénom + Nom' %><br/>
+        <%= f.text_field :nom %><br/>
+
+        <%= f.label 'Email public' %><br/>
+        <%= f.text_field :email %><br/>
+
+        <%= f.label 'Ville' %><br/>
+        <%= f.text_field :ville %><br/>
+
+        <%= f.label 'Société' %><br/>
+        <%= f.text_field :societe %><br/>
+
+        <%= f.label 'Blog ou site' %><br/>
+        <%= f.text_field :blog %><br/>
+
+        <%= f.label 'Twitter' %><br/>
+        <%= f.text_field :twitter %><br/>
+
+        <%= f.label 'Linkedin' %><br/>
+        <%= f.text_field :linkedin %><br/>
+
+        <%= f.label 'Facebook' %><br/>
+        <%= f.text_field :facebook %><br/><br/>
+
+
+	<br/>
+   
+      <%= f.submit "Modifier" , :class => "big_button green_button" %>
+    <% end %>
+</div>
+
+
+
+
+
+

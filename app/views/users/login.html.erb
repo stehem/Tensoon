@@ -1,0 +1,16 @@
+    <h1>S'identifier</h1>
+
+    <% form_for(:user, @user, :url => { :controller => "users", :action => "login" }) do |f| %>
+      <%= f.error_messages %>
+      <div>
+        <%= f.label 'Login' %>
+        <%= f.text_field :login %>
+      </div>
+      <div>
+        <%= f.label 'Mot de passe' %>
+        <%= f.password_field :password %>
+      </div>
+
+      <%= f.submit "S'identifier" %>
+    <% end %>
+<br/><br/>

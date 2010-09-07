@@ -1,0 +1,98 @@
+<% div_for @story do %>
+
+
+
+<div id="votes" >
+	<div id="image-wrapper">
+	<span id= <%= '"vote' + @story.id.to_s + '">' %><%= @story.votesnb %></span>
+	</div>
+
+	<span id=<%= '"votelink' + @story.id.to_s + '"' %> class="votelink">
+	<%= link_to_remote "Voter", :url => { :action => "vote", :controller => "votes", :story_id => @story.id  } , :loading => "$('loading#{@story.id}').show();", :loaded => "$('loading#{@story.id}').hide();" %>
+	</span>
+        
+         <%= image_tag "ajax-loader.gif", :style => "display: none;", :id => "loading#{@story.id}" %>
+	
+ 	
+	
+</div>
+
+
+<div class="storyright">
+
+<div class="storytitre">
+<%= link_to "#{@story.titre}" , @story.url %>
+</div>
+
+
+<div id="avinfos">
+
+<div id="avatar" >
+<%= image_tag @story.avatarurl %>
+</div>
+
+<div class="infos">
+<%= "Posté par " +  @story.poster + " " %><%= l @story.created_at  %><br/>
+<%= "Source: "%><%= link_to "www." + @story.source , @story.url , :rel => "nofollow" %><br/>
+<%= "Catégorie: " + @story.category%>
+</div>
+
+</div>
+
+<div class="snip">
+<%= @story.snip %>
+</div>
+
+
+<ul class="comms">
+<li><%= image_tag "comments.gif" %></li>
+
+
+
+<li><span class="nbcomms">
+
+<% if @story.comments.size > 0 %>
+<%= link_to "#{@story.comments.size} commentaires" , {:controller=>'stories',:action=>'show',:id => "#{@story.id}#{Story.prettyurl(@story.titre)}"}  %>
+<% else %>
+<%= link_to "Commenter" , {:controller=>'stories',:action=>'show',:id => "#{@story.id}#{Story.prettyurl(@story.titre)}"}  %>
+<% end %>
+
+
+
+</span></li>
+
+</ul>
+
+<div class="tw">
+<a href="http://twitter.com/share?url=<%= URI.escape("http://tensoon.fr/#{@story.id}#{Story.prettyurl(@story.titre)}&amp;text=#{@story.titre}") %>" class="twitter-share-button" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+</div>
+
+<div class="bz">
+<a title="Publier sur Google Buzz" class="google-buzz-button" href="http://www.google.com/buzz/post?url=<%= URI.escape("http://tensoon.fr/#{@story.id}#{Story.prettyurl(@story.titre)}") %>" data-button-style="small-button" data-locale="fr"></a>
+<script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script>
+</div>
+
+
+<div class="fb">
+<iframe src="http://www.facebook.com/plugins/like.php?locale=fr_FR&href=<%= URI.escape("http://tensoon.fr/#{@story.id}#{Story.prettyurl(@story.titre)}") %>&amp;layout=button_count&amp;show_faces=true&amp;width=50&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:25px;" allowTransparency="true"></iframe>
+</div>
+
+<div class="storybottom">
+</div>
+
+</div>
+
+
+
+<% end %>
+
+<div id="msg" style="display:none;">
+</div>
+
+
+
+<%= render :partial => "comments/poster"  %>
+
+
+
+
