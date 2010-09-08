@@ -17,8 +17,10 @@ class VotesController < ApplicationController
   Vote.increment(@sto)
   @nb = @sto.votesnb + 1
   
-@sto.votesnb =+ 1
-@sto.save
+#@sto.votesnb =+ 1
+#@sto.save
+
+@sto.update_attribute(:votesnb , @nb)
 
 
 
