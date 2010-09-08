@@ -41,6 +41,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "tensoon"
   map.connect "/users/show/:user" , :controller => "users" , :action => "show"
   map.connect "/poster-article" , :controller => "posterarticle" , :action => "index"
+  map.connect "/hadmin" , :controller => "tensoon" , :action => "hadmin"
   map.connect "/moncompte" , :controller => "moncompte" , :action => "index"
   map.connect "/users/signup" , :controller => "users" , :action => "signup"
   map.connect "/sessions/login" , :controller => "sessions" , :action => "login"

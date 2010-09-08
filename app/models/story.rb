@@ -61,4 +61,9 @@ def self.socurl (story)
 )
 end
 
+def self.effacer_story(storyid)
+story = Story.find(storyid)
+story.destroy
+end
+
 end

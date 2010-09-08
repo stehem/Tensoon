@@ -2,6 +2,7 @@ class TensoonController < ApplicationController
 
 require 'sanitize'
 
+
 def index  
 
 
@@ -47,6 +48,22 @@ votes/((hrs+2)**1.5)
 end
 
 
+def hadmin
+currentuser
+
+if @currentuser && @currentuser.login == "stephane"
+#@users = User.find(:all , :order => "created_at DESC")
+@stories = Story.find(:all , :order => "created_at DESC")
+if params[:effacer] == "oui" && params[:storyid]
+Story.effacer_story(params[:storyid])
+redirect_to "/hadmin"
+end
+else
+redirect_to root_url
+end
+
+
+end
 
 end
 
