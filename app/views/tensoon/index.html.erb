@@ -70,7 +70,7 @@
 <div class="infos">
 <%= "Posté par " %><a href="/users/show/<%= f.poster %>"><%= f.poster %></a>
  <%= l f.created_at  %><br/>
-<%= "Source: "%><a href="<%= f.url %>" rel="nofollow"><%= f.source %></a><br/>
+<%= "Source: "%><a href="<%= f.url %>"><%= f.source %></a><br/>
 
 
 <%= "Catégorie: " %><a href="/?cat1=Home&cat2=<%= URI.escape(f.category) %>"><%= f.category %></a>
