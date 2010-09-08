@@ -91,6 +91,7 @@ fr:
             snip:
               too_short: "doit contenir au moins 300 caractères."
               blank: "ne peut pas être vide."
+              too_long: "ne peut pas excéder 600 caractères."
             delai:
               invalid: ": vous ne pouvez poster qu'un article par heure."
             rules:

@@ -21,6 +21,7 @@ validates_presence_of :titre, :snip , :url , :category
 validates_length_of :titre, :maximum=>100 , :if => :titre?
 validates_format_of :url, :with => /http:\/\// , :if => :url?
 validates_length_of :snip, :minimum=>300 , :if => :snip?
+validates_length_of :snip, :maximum=>600 , :if => :snip?
 validate :lessthan1hr
 validates_acceptance_of :rules
 
