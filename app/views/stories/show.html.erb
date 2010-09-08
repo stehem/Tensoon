@@ -33,7 +33,7 @@
 
 <div class="infos">
 <%= "Posté par " +  @story.poster + " " %><%= l @story.created_at  %><br/>
-<%= "Source: "%><%= link_to "www." + @story.source , @story.url , :rel => "nofollow" %><br/>
+<%= "Source: "%><%= link_to @story.source , @story.url  %><br/>
 <%= "Catégorie: " + @story.category%>
 </div>
 
