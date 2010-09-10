@@ -37,6 +37,8 @@ require 'sanitize'
   def show
   @story = Story.find_by_id(params[:id].to_i)
   @current = "Home"
+  @title = @story.titre
+  @desc = @story.snip
   end
 
   def rules

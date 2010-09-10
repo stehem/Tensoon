@@ -1,4 +1,4 @@
-<div class="commheader">Commentaires</div>
+<div class="commheader">Commentaires</div><br/>
 	<% @story.comments.each do |f| %>
 	<% div_for f do %>
 
@@ -41,7 +41,7 @@
 <% if current_user %>
 
 <div id="comments_form">
-<h2>Commenter</h2>
+
 
 <% form_for(:comment, @comment, :url => { :controller => "comments", :action => "poster" } , :html => {:class => "form"}) do |f| %>
 

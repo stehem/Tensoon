@@ -9,12 +9,16 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
 
-  before_filter :check_uri
+ before_filter :meta , :check_uri 
 
   def check_uri
     redirect_to(request.protocol + "www." + request.host_with_port + request.request_uri , :status => :moved_permanently) if !/^www/.match(request.host)
   end
 
+  def meta
+  @title = "Tensoon - l'actualité du SEO et marketing online"
+  @desc = "Lisez, partagez, soumettez et votez des articles sur le SEO et tous les domaines du marketing online"
+  end
  
 
 
