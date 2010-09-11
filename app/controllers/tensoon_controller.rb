@@ -30,8 +30,7 @@ end
 
 @tensoon = @tensoon.paginate :page => params[:page], :per_page => 10
 
-@last10 = Story.last10
-@last10c = Comment.last10c
+
 
 
   

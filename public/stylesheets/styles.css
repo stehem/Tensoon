@@ -39,7 +39,7 @@ overflow:hidden; height:1%;
 
 #submainright{
 width:280px;
-height:500px;
+
 float:right;
 
 }
@@ -435,6 +435,7 @@ color:#599555;
 
 #footcomment{
 clear:both;
+margin-left:60px;
 }
 
 
@@ -583,4 +584,9 @@ height:20px;
 float:right;
 margin-top:40px;
 margin-left:80px;
+}
+
+#adsense2{
+padding-left:15px;
+
 }
