@@ -89,7 +89,7 @@ fr:
               invalid: "n'est pas une url valide."
               blank: "ne peut pas être vide."
             snip:
-              too_short: "doit contenir au moins 300 caractères."
+              too_short: "doit contenir au moins 200 caractères."
               blank: "ne peut pas être vide."
               too_long: "ne peut pas excéder 600 caractères."
             delai:
