@@ -46,7 +46,7 @@ end
 
 def lessthan1hr
 dernierpost = Story.last(:conditions => ['poster = ?', self.poster])
-unless !dernierpost
+unless !dernierpost || dernierpost.poster == "rorschach"
 if (Time.now.to_i/60)-(dernierpost.created_at.to_i/60) < 60
 errors.add(:delai)
 end
