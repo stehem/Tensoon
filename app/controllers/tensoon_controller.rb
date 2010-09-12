@@ -50,7 +50,7 @@ end
 def hadmin
 currentuser
 
-if @currentuser && @currentuser.login == "stephane"
+if @currentuser && @currentuser.login == "rorschach"
 #@users = User.find(:all , :order => "created_at DESC")
 @stories = Story.find(:all , :order => "created_at DESC")
 if params[:effacer] == "oui" && params[:storyid]
