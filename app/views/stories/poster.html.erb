@@ -1,4 +1,4 @@
- <br/>   <h1>Créer un post</h1>
+ <br/>   <h1>Poster un article</h1>
 
   <% setcurrent("Poster un article") %>
 
@@ -19,7 +19,7 @@
  <%= f.select(:category , [nil, 'SEO','PPC', 'Social Media', 'Analytics', 'Display', 'Usabilité', 'Affiliation']) %><br/><br/>
 <%= f.check_box :rules %> J'ai lu les <a href="/stories/rules" class="lbOn">consignes</a> concernant les articles.<br/><br/>
 
-      <%= f.submit "Créer un post" , :class => "big_button green_button" %>
+      <%= f.submit "Poster un article" , :class => "big_button green_button" %>
     <% end %>
 
 </fieldset>
