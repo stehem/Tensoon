@@ -46,7 +46,7 @@
 
 
 <ul class="comms">
-<li><%= image_tag "comments.gif" %></li>
+<li><%= image_tag "Comments-32.png" %></li>
 
 
 
@@ -64,18 +64,19 @@
 
 </ul>
 
-<div class="tw">
-<a href="http://twitter.com/share?url=<%= URI.escape("http://tensoon.fr/#{@story.id}#{Story.prettyurl(@story.titre)}&amp;text=#{@story.titre}") %>" class="twitter-share-button" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-</div>
+
 
 <div class="bz">
-<a title="Publier sur Google Buzz" class="google-buzz-button" href="http://www.google.com/buzz/post?url=<%= URI.escape("http://tensoon.fr/#{@story.id}#{Story.prettyurl(@story.titre)}") %>" data-button-style="small-button" data-locale="fr"></a>
+<a title="Publier sur Google Buzz" class="google-buzz-button" href="http://www.google.com/buzz/post?url=<%= @story.bzurl %>" data-button-style="small-button" data-locale="fr"></a>
 <script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script>
 </div>
 
+<div class="tw">
+<a href="http://twitter.com/share?url=<%= @story.twurl %>" class="twitter-share-button" data-count="horizontal">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+</div>
 
 <div class="fb">
-<iframe src="http://www.facebook.com/plugins/like.php?locale=fr_FR&href=<%= URI.escape("http://tensoon.fr/#{@story.id}#{Story.prettyurl(@story.titre)}") %>&amp;layout=button_count&amp;show_faces=true&amp;width=50&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:25px;" allowTransparency="true"></iframe>
+<iframe src="http://www.facebook.com/plugins/like.php?locale=fr_FR&href=<%= @story.fburl %>&amp;layout=button_count&amp;show_faces=true&amp;width=50&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:25px;" allowTransparency="true"></iframe>
 </div>
 
 <div class="storybottom">
