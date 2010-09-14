@@ -11,7 +11,7 @@ Nombre de commentaires : <span class="result"><%= @user.comments.size %></span><
 
 Nom : <span class="result"><%= @user.nom %></span><br/>
 Ville : <span class="result"><%= @user.ville %></span><br/>
-Société : <span class="result"><%= @user.societe %></span><br/><br/>
+Société : <span class="result"><%= link_to @user.societe , @user.societe %></span><br/><br/>
 Facebook : <span class="result"><% unless !@user.facebook %><%= link_to @user.facebook , @user.facebook %><% end %></span><br/>
 Linkedin : <span class="result"><% unless !@user.linkedin %><%= link_to @user.linkedin , @user.linkedin %><% end %></span><br/>
 Twitter : <span class="result"><% unless !@user.twitter %><%= link_to @user.twitter , @user.twitter %><% end %><br/></span><br/>
