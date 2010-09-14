@@ -39,11 +39,12 @@ end
 
 def show
 @user = User.find_by_login(params[:user])
+@nb = Story.nbsubmitted(@user.login)
 currentuser #@currentuser
 
 unless !@currentuser
 
-@nb = Story.nbsubmitted(params[:user])
+
 #User.addtoviewers(currentuser , @user) unless !currentuser
 
 if !@user.viewers
