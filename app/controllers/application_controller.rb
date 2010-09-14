@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
 
- before_filter :meta , :sidebar ,:check_uri 
+ before_filter :meta , :sidebar #,:check_uri 
 
   def check_uri
     redirect_to(request.protocol + "www." + request.host_with_port + request.request_uri , :status => :moved_permanently) if !/^www/.match(request.host)
@@ -40,7 +40,7 @@ def login_required
       return true
     else
     
-    flash[:message]='Please login to continue'    
+    flash[:message]='Connectez vous pour continuer'    
     redirect_to "/sessions/login"
     session[:return_to] = request.request_uri
     end
