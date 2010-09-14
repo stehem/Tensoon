@@ -568,6 +568,7 @@ font-weight:bold;
         vertical-align: middle;
         padding:0;
         margin:0;
+
 }
 
 .flashcomms{
@@ -616,4 +617,26 @@ display:inline;
 
 #credits img{
 vertical-align:middle;
+}
+
+#faq{
+clear:left;
+
+}
+
+.question {
+font-size:130%;
+color:#599555;
+text-shadow: 2px 2px 2px #ddccb5;
+}
+
+.reponse {
+font-size:110%;
+text-shadow: 2px 2px 2px #ddccb5;
+}
+
+.reponse a{
+
+text-shadow: 2px 2px 2px #ddccb5;
+color:#599555;
 }

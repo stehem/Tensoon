@@ -64,6 +64,12 @@ end
 
 end
 
+
+def faq
+@current = "FAQ"
+end
+
+
 end
 
 

@@ -70,11 +70,12 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 <div class="invertedshiftdown">
 <ul>
-<% menu = Array["Home","Dernières Actus","Poster un article","Mon Compte"] %>
+<% menu = Array["Home","Dernières Actus","Poster un article","Mon Compte","FAQ"] %>
 <li <%= 'class="current"' if @current == menu[0] %>> <a href="/">Home</a></li>
 <li <%= 'class="current"' if @current == menu[1] %>> <a href="/?cat1=Derni%C3%A8res+Actus">Dernières Actus</a></li>
 <li <%= 'class="spec"' if @current == menu[2] %>> <a href="/stories/poster">Poster un article</a></li>
 <li <%= 'class="spec"' if @current == menu[3] %>> <a href="/moncompte">Mon Compte</a></li>
+<li <%= 'class="spec"' if @current == menu[4] %>> <a href="/faq">FAQ</a></li>
 </ul>
 </div>
 
