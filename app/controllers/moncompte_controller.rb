@@ -14,11 +14,12 @@ def edit
 
    if request.post?
        @user.upd = 1
-        @user.update_attributes(params[:user])
+        if @user.update_attributes(params[:user])
         redirect_to :action => 'index'
         if params[:user]
          flash[:avert] = "Informations modifiées"
           end
+           end
       end
 
 

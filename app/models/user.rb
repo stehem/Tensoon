@@ -26,7 +26,7 @@ validates_presence_of :login , :password ,:if => :should_validate_logpass
 validates_uniqueness_of :login
 validates_attachment_presence :avatar , :message => "ne peut pas être vide"
 validates_length_of :login , :maximum => 15
-validates_length_of :ville , :twitter , :blog , :facebook , :societe, :email , :linkedin , :maximum => 30
+
 
 
 before_save :encrypt_password
