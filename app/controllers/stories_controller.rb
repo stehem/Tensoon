@@ -24,7 +24,7 @@ require 'sanitize'
   @story.bzurl = URI.escape("#{@story.url}")
   if @story.save
   #Story.socurl (@story)
-  redirect_to "/stories/show/#{@story.id}"
+  redirect_to "/#{@story.id}#{@story.prettytitre}"
   #flash[:message] = "Story submitted"
 
 
