@@ -16,11 +16,12 @@ Facebook : <span class="result"><% unless !@user.facebook %><%= link_to @user.fa
 Linkedin : <span class="result"><% unless !@user.linkedin %><%= link_to @user.linkedin , @user.linkedin %><% end %></span><br/>
 Twitter : <span class="result"><% unless !@user.twitter %><%= link_to @user.twitter , @user.twitter %><% end %><br/></span><br/>
 Blog/Site : <span class="result"><% unless !@user.blog %><%= link_to @user.blog , @user.blog %><% end %><br/></span><br/>
-Profil consulté récemment par : <span class="result">
+
 <% unless !@b %>
+Profil consulté récemment par : <span class="result">
 <% @b.each do |f| %><%= link_to f , {:controller=>'users',:action=>'show',:user => "#{f}"} %> <% end %>
 <% end %></span>
-<br/><br/>
+
 
 
 </div>
