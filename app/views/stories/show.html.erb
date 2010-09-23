@@ -33,7 +33,7 @@
 </div>
 
 <div class="infos">
-<%= "Posté par " %><a href="/users/show/<%= @story.poster %>"><%= @story.poster %></a> <%= l @story.created_at  %><br/>
+<%= "Posté par " %><a href="/users/show/<%= @story.poster %>" rel="nofollow"><%= @story.poster %></a> <%= l @story.created_at  %><br/>
 <%= "Source: "%><%= link_to @story.source , @story.url  %><br/>
 <%= "Catégorie: " %><a href="/?cat1=Home&cat2=<%= URI.escape(@story.category) %>"><%= @story.category %></a>
 </div>
