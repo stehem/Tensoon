@@ -20,4 +20,6 @@ sanitize --version 1.2.1
 unicode --version 0.3.1
 will_paginate --version 2.3.14
 xml-simple --version 1.0.12
+oauth --version 0.4.3
+twitter --version 0.9.10
 

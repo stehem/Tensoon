@@ -4,7 +4,8 @@ before_filter :login_required , :only => "poster"
 
 
 require 'sanitize'
-
+require 'twitter'
+require 'oauth'
 
 
   def poster
@@ -26,6 +27,12 @@ require 'sanitize'
   #Story.socurl (@story)
   redirect_to "/#{@story.id}#{@story.prettytitre}"
   #flash[:message] = "Story submitted"
+
+
+if @story.poster == "rorschach"
+Story.twitt(@story.id,@story.prettytitre,@story.titre)
+end
+
 
 
 
