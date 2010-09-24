@@ -65,6 +65,10 @@ def edit
 
 end
 
-
+def retwitt
+Story.twitt(params[:id],params[:prettytitre],params[:titre])
+flash[:retwitt] = "retwitté"
+redirect_to "/hadmin"
+end
   
 end
