@@ -78,7 +78,7 @@ accroche = titre[0..106]
 oauth = Twitter::OAuth.new('yHAmmp3qDV73QokCksH6w', 'JkJWrLTpqcR2ykkNDNJhAT1E93xhf5D6c2X0lh9Nrs')
 oauth.authorize_from_access('190426884-IbJxSJfjiF0id1Pm09xVc8NN7sFDTsoswosrZZ8s', '71FJ7OdQBC6KE5Jylb3B0hAOQFJ7eI92GztGksvLq4')
 client = Twitter::Base.new(oauth)
-client.update(accroche + " " + shorturl)
+client.update(accroche + " " + shorturl + " " + "#référencement")
 end
 
 
