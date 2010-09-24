@@ -51,5 +51,20 @@ end
   def rules
   render :partial => 'rules'
   end
+
+def edit
+@story = Story.find(params[:id])
+
+
+   if request.post?
+        if @story.update_attributes(params[:story])
+        redirect_to "/#{@story.id}#{@story.prettytitre}"
+           end
+      end
+
+
+end
+
+
   
 end

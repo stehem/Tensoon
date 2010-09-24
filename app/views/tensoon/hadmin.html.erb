@@ -1,6 +1,8 @@
-<br/>Total:<%= @stories.count.to_s %><br/>
+<br/><br/>Total de stories : <%= @stories.count.to_s %><br/>
+Total de users : <%= @users.count.to_s %>
+<br/><br/><br/>
 <% @stories.each do |f| %>
 <%= f.titre %><br/><%= f.url %><br/>Créé le<%= l f.created_at %><br/>
-<%= link_to "Effacer" , :effacer => "oui" , :storyid => f.id %>
+<%= link_to "Effacer" , :effacer => "oui" , :storyid => f.id %><%= " - " %><%= link_to "Modifier" , :controller => "stories" , :action => "edit" , :id => f.id %>
 <br/><br/>
 <% end %>

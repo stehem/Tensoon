@@ -52,7 +52,8 @@ currentuser
 
 if @currentuser && @currentuser.login == "rorschach"
 #@users = User.find(:all , :order => "created_at DESC")
-@stories = Story.find(:all , :order => "created_at DESC")
+@stories = Story.find(:all , :order => "created_at DESC" , :limit => 20)
+@users = User.find(:all)
 if params[:effacer] == "oui" && params[:storyid]
 Story.effacer_story(params[:storyid])
 redirect_to "/hadmin"
