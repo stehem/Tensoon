@@ -4,6 +4,9 @@
 <title><%=  truncate(@title, :length => 70)  %></title>
 <META NAME="Description" CONTENT="<%=  truncate(@desc, :length => 170)  %>">
 <% noindex %><%=  @noindex  %> 
+<% if @canonical %>
+<%= @canonical %>
+<% end %>
 <meta name="google-site-verification" content="425YNCsgzCeHYBe4rLyO6tPtl8tVZyLNzDNtcLNfp3Y" />
 <%=  stylesheet_link_tag "styles"  %> 
 <%= javascript_include_tag :defaults %> 
