@@ -46,7 +46,7 @@ end
   @current = "Home"
   @title = @story.titre
   @desc = @story.snip
-  @canonical = '<link rel="canonical" href="http://www.tensoon.fr/' + @story.id.to_s + @story.prettytitre + '"'
+  @canonical = '<link rel="canonical" href="http://www.tensoon.fr/' + @story.id.to_s + @story.prettytitre + '">'
   end
 
   def rules
