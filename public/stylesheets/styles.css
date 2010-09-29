@@ -122,8 +122,9 @@ color:#599555;
 #avatar{
 float:left;
 padding-right:10px;
-	height:64px;
-
+height:48px;
+padding-top:3px;
+margin-bottom:10px;
 }
 
 .infos{
@@ -555,8 +556,9 @@ color:#EF7114;
 .pagination {
 color:#599555;
 font-weight:bold;
-margin-left:65px;
+
 font-size:14px;
+clear:both;
 }
 
 .pagination a{
@@ -639,4 +641,11 @@ text-shadow: 2px 2px 2px #ddccb5;
 
 text-shadow: 2px 2px 2px #ddccb5;
 color:#599555;
+}
+
+.score{
+color:#6CB95B;
+font-weight:bold;
+font-size:105%;
+text-decoration: underline;
 }

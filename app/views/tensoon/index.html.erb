@@ -14,21 +14,6 @@
 
 
 
-<div id="votes" >
-	<div id="image-wrapper">
-	<span id= <%= '"vote' + f.id.to_s + '">' %><%= f.votesnb %></span>
-	</div>
-
-	<span id=<%= '"votelink' + f.id.to_s + '"' %> class="votelink">
-	<a href="#" onclick="new Ajax.Request('/votes/vote?story_id=<%=f.id.to_s%>', {asynchronous:true, evalScripts:true, onLoaded:function(request){$('loading<%=f.id.to_s%>').hide();}, onLoading:function(request){$('loading<%=f.id.to_s%>').show();}, parameters:'authenticity_token=' + encodeURIComponent('1RIoVZEKhS7+X103H1voFXmi8CKXmIznFOQvg3QJ7rI=')}); return false;">Voter</a>
-	</span>
-
-        
-         <%= image_tag "ajax-loader.gif", :style => "display: none;", :id => "loading#{f.id}" %>
-	
- 	
-	
-</div>
 
 
 <div class="storyright">
@@ -43,7 +28,7 @@
 <div id="avinfos">
 
 <div id="avatar" >
-<%= image_tag f.avatarurl %>
+<%= image_tag "cat_#{f.category}48.png" %>
 </div>
 
 <div class="infos">
@@ -64,20 +49,29 @@
 
 
 <ul class="comms">
+
+
+
+
+
+<li>Score:</li>
+<li><span id= <%= '"vote' + f.id.to_s + '">' %><span class="score"><%= f.votesnb %></span></span></li>
+<li>=></li>
+<li><span id=<%= '"votelink' + f.id.to_s + '"' %> class="nbcomms">
+<a href="#" onclick="new Ajax.Request('/votes/vote?story_id=<%=f.id.to_s%>', {asynchronous:true, evalScripts:true, onLoaded:function(request){$('loading<%=f.id.to_s%>').hide();}, onLoading:function(request){$('loading<%=f.id.to_s%>').show();}, parameters:'authenticity_token=' + encodeURIComponent('1RIoVZEKhS7+X103H1voFXmi8CKXmIznFOQvg3QJ7rI=')}); return false;">Voter</a></span></li>
+
+<li>&nbsp;</li>
+<li>&nbsp;</li>
+<li>&nbsp;</li>
+
 <li><img alt="Comments-32" src="/images/Comments-32.png?1284398459" /></li> 
 
-
-
 <li><span class="nbcomms">
-
 <% if f.comments.size > 0 %>
 <a href="/<%=f.id.to_s + f.prettytitre %>"><%= f.comments.size  %> Commentaires</a>
 <% else %>
 <a href="/<%=f.id.to_s + f.prettytitre %>">Commenter</a>
 <% end %>
-
-
-
 </span></li>
 
 </ul>

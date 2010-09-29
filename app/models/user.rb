@@ -24,7 +24,7 @@ validates_format_of :facebook , :with => /^http:\/\// , :if => :facebook?
 validates_confirmation_of :password 
 validates_presence_of :login , :password ,:if => :should_validate_logpass
 validates_uniqueness_of :login
-validates_attachment_presence :avatar , :message => "ne peut pas être vide"
+#validates_attachment_presence :avatar , :message => "ne peut pas être vide"
 validates_length_of :login , :maximum => 15
 
 
