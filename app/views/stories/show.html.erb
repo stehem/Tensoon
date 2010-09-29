@@ -2,23 +2,6 @@
 <% div_for @story do %>
 
 
-
-<div id="votes" >
-	<div id="image-wrapper">
-	<span id= <%= '"vote' + @story.id.to_s + '">' %><%= @story.votesnb %></span>
-	</div>
-
-	<span id=<%= '"votelink' + @story.id.to_s + '"' %> class="votelink">
-	<%= link_to_remote "Voter", :url => { :action => "vote", :controller => "votes", :story_id => @story.id  } , :loading => "$('loading#{@story.id}').show();", :loaded => "$('loading#{@story.id}').hide();" %>
-	</span>
-        
-         <%= image_tag "ajax-loader.gif", :style => "display: none;", :id => "loading#{@story.id}" %>
-	
- 	
-	
-</div>
-
-
 <div class="storyright">
 
 <div class="storytitre">
@@ -29,7 +12,7 @@
 <div id="avinfos">
 
 <div id="avatar" >
-<%= image_tag @story.avatarurl %>
+<%= image_tag "cat_#{@story.category}48.png" %>
 </div>
 
 <div class="infos">
@@ -46,23 +29,25 @@
 
 
 <ul class="comms">
+<li><span class="infos">Score:</span></li>
+<li><span id= <%= '"vote' + @story.id.to_s + '">' %><span class="score"><%= @story.votesnb %></span></span></li>
+<li>=></li>
+<li><span id=<%= '"votelink' + @story.id.to_s + '"' %> class="nbcomms">
+<a href="#" onclick="new Ajax.Request('/votes/vote?story_id=<%=@story.id.to_s%>', {asynchronous:true, evalScripts:true, onLoaded:function(request){$('loading<%=@story.id.to_s%>').hide();}, onLoading:function(request){$('loading<%=@story.id.to_s%>').show();}, parameters:'authenticity_token=' + encodeURIComponent('1RIoVZEKhS7+X103H1voFXmi8CKXmIznFOQvg3QJ7rI=')}); return false;">Voter</a></span></li>
+
+<li>&nbsp;</li>
+<li>&nbsp;</li>
+<li>&nbsp;</li>
+
 <li><img alt="Comments-32" src="/images/Comments-32.png?1284398459" /></li> 
 
-
-
 <li><span class="nbcomms">
-
 <% if @story.comments.size > 0 %>
-<%= link_to "#{@story.comments.size} commentaires" , {:controller=>'stories',:action=>'show',:id => "#{@story.id}#{Story.prettyurl(@story.titre)}"}  %>
+<a href="/<%=@story.id.to_s + f.prettytitre %>"><%= @story.comments.size  %> Commentaires</a>
 <% else %>
-<%= link_to "Commenter" , {:controller=>'stories',:action=>'show',:id => "#{@story.id}#{Story.prettyurl(@story.titre)}"}  %>
+<a href="/<%=@story.id.to_s + @story.prettytitre %>">Commenter</a>
 <% end %>
-
-
-
-</span></li>
-
-</ul>
+</span></li></ul>
 
 
 
