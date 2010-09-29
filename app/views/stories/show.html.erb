@@ -43,7 +43,7 @@
 
 <li><span class="nbcomms">
 <% if @story.comments.size > 0 %>
-<a href="/<%=@story.id.to_s + f.prettytitre %>"><%= @story.comments.size  %> Commentaires</a>
+<a href="/<%=@story.id.to_s + @story.prettytitre %>"><%= @story.comments.size  %> Commentaires</a>
 <% else %>
 <a href="/<%=@story.id.to_s + @story.prettytitre %>">Commenter</a>
 <% end %>
