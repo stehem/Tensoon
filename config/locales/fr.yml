@@ -52,6 +52,7 @@ fr:
               too_long: "ne peut pas dépasser 12 caractères."
             password: 
               blank: "ne peut pas être vide."
+              confirmation: ": la confirmation est incorrecte."
             email:
               invalid: "n'est pas une adresse email valide."
               too_long: "ne peut pas dépasser 30 caractères."

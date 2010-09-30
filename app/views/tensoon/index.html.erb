@@ -59,7 +59,7 @@
 <li>=></li>
 <li><span id=<%= '"votelink' + f.id.to_s + '"' %> class="nbcomms">
 <a href="#" onclick="new Ajax.Request('/votes/vote?story_id=<%=f.id.to_s%>', {asynchronous:true, evalScripts:true, onLoaded:function(request){$('loading<%=f.id.to_s%>').hide();}, onLoading:function(request){$('loading<%=f.id.to_s%>').show();}, parameters:'authenticity_token=' + encodeURIComponent('1RIoVZEKhS7+X103H1voFXmi8CKXmIznFOQvg3QJ7rI=')}); return false;">Voter</a></span></li>
-
+      <li>   <%= image_tag "ajax-loader.gif", :style => "display: none;", :id => "loading#{f.id}" %></li>
 <li>&nbsp;</li>
 <li>&nbsp;</li>
 <li>&nbsp;</li>
