@@ -22,7 +22,7 @@ if params[:cat1] == "Dernières Actus"
 @tensoon
 else
 @tensoon.each do |s|
-s.score = "#{score(hours_since_created(s),s.votesnb)}"
+s.score = score(hours_since_created(s),s.votesnb)
 end
 @tensoon = @tensoon.sort {|a,b| b.score<=>a.score}
 
