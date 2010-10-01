@@ -32,19 +32,21 @@
 
 <div id ="top">
 
-<div class="subheader">
+<ul id="formats">
 <span style="color:#EF7114;"> <%= flash[:message] %></span>
 <% unless current_user %>
-<a href="/users/signup">Créer un compte</a>
-<a href="/sessions/login">S'identifier</a>
+<li><a href="/users/signup">Créer un compte</a></li>
+<li><a href="/sessions/login">S'identifier</a></li>
+<li><a href="/stories/poster">Poster un article</a></li>
 <% end %>
 
 <% if current_user %>
 <span style="color:#EF7114;"><%= "Identifié en tant que #{@current_user}" %></span>
 <a href="/sessions/logout">Déconnexion</a>
-<% end %>
 <a href="/stories/poster">Poster un article</a>
-</div>
+<% end %>
+
+</ul>
 
 
 
