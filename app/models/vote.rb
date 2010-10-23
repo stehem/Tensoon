@@ -21,11 +21,13 @@ def self.findstory(story)
 Story.find_by_id(story)
 end
 
-def self.has_already_voted(storyid , userid)
-Vote.find_by_user_id_and_story_id(userid , storyid)
+#def self.has_already_voted(storyid , userid)
+#Vote.find_by_user_id_and_story_id(userid , storyid)
+#end
+
+def self.has_already_voted(voter,story_id)
+self.find_by_voterip(voter , :conditions => ["story_id=?", story_id])
 end
-
-
 
 
 end

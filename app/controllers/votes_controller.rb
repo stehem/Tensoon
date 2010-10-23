@@ -1,19 +1,31 @@
 class VotesController < ApplicationController
 #before_filter :login_required , :only => "vote"
 
-  def vote
+ def vote
 
   @s = params[:story_id]
 
-  if currentuser
+  #if currentuser
 
-  @sto = Story.find(@s)
+  voterip = request.remote_ip
+  story_id = params[:story_id]
+  #@story = Story.find(story_id)
 
-  if !Vote.has_already_voted(params[:story_id] , currentuserid ) && @sto.poster != currentuser.login
+  if !Vote.has_already_voted(voterip,story_id)
 
 
-  @vote = currentuser.votes.build(:story_id => params[:story_id])
+
+
+  @sto = Story.find(params[:story_id])
+
+  #if !Vote.has_already_voted(params[:story_id] , currentuserid ) && @sto.poster != currentuser.login
+
+
+  @vote = Vote.new(:story_id => story_id, :voterip => voterip)
   @vote.save
+
+
+
   Vote.increment(@sto)
   @nb = @sto.votesnb + 1
   
@@ -35,10 +47,10 @@ class VotesController < ApplicationController
   #end
 
 
-  else
+else
 
 
-flash[:message] = "deja vote"
+
 respond_to do |format|
     format.js {
       render :update do |page|
@@ -49,23 +61,21 @@ respond_to do |format|
   end
 
 
-  end
+
+ # else
+
+ # respond_to do |format|
+   # format.js {
+   #   render :update do |page|
+    #    page.redirect_to "/sessions/login"
+    #  end
+  # }
+  #end
 
 
-  else
-
-  respond_to do |format|
-    format.js {
-      render :update do |page|
-        page.redirect_to "/sessions/login"
-      end
-   }
   end
 
 end
-
-  end
-
 
 
   def votesignup

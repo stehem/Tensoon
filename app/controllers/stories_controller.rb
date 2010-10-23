@@ -14,7 +14,7 @@ require 'oauth'
   @story = Story.new(params[:story])
   @story.source = @story.url.split('/')[2] 
   @story.poster = session[:login]
-  @story.votesnb = "1"
+  @story.votesnb = "0"
   @story.avatarurl = findavatar(@story.poster)
   @story.titre = Sanitize.clean(@story.titre, Sanitize::Config::RESTRICTED)
   @story.url = Sanitize.clean(@story.url, Sanitize::Config::RESTRICTED)

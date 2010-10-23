@@ -37,6 +37,9 @@ color: #373737;
 overflow:hidden; height:1%;
 }
 
+
+
+
 #submainright{
 width:280px;
 
@@ -339,7 +342,7 @@ clear:left;
 background-color: #6cb95b;
 width: 600px;
 padding:0;
-margin-bottom:30px;
+margin-bottom:10px;
 }
 
 .submenu li{
@@ -392,6 +395,7 @@ color:#6CB95B;
         margin-bottom: 0px;
         margin-right:-15px;
         padding: 0;
+        
       }
       #formats li {
         display: inline-block;
@@ -620,6 +624,11 @@ padding-left:15px;
 
 }
 
+#adsense2 a img{
+clear:both;
+
+}
+
 #credits{
 list-style:none;
 margin:0px;
@@ -670,4 +679,24 @@ color:#6CB95B;
 font-weight:bold;
 font-size:105%;
 text-decoration: underline;
+}
+
+.votehighlight a{
+color:#EF7114;
+font-weight:bold;
+}
+
+.vote_incentive{
+margin-bottom:10px;
+color:#EF7114;
+font-style: italic ;
+opacity:0.7;
+}
+
+#moztxt{
+margin-bottom:5px;
+}
+
+#moztxt a{
+color:#B3546D;
 }

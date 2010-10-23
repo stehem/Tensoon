@@ -32,8 +32,8 @@
 <li><span class="infos">Score:</span></li>
 <li><span id= <%= '"vote' + @story.id.to_s + '">' %><span class="score"><%= @story.votesnb %></span></span></li>
 <li>=></li>
-<li><span id=<%= '"votelink' + @story.id.to_s + '"' %> class="nbcomms">
-<a href="#" onclick="new Ajax.Request('/votes/vote?story_id=<%=@story.id.to_s%>', {asynchronous:true, evalScripts:true, onLoaded:function(request){$('loading<%=@story.id.to_s%>').hide();}, onLoading:function(request){$('loading<%=@story.id.to_s%>').show();}, parameters:'authenticity_token=' + encodeURIComponent('1RIoVZEKhS7+X103H1voFXmi8CKXmIznFOQvg3QJ7rI=')}); return false;">Voter</a></span></li>
+<li><span id=<%= '"votelink' + @story.id.to_s + '"' %> class="votehighlight">
+<a href="#" onclick="new Ajax.Request('/votes/vote?story_id=<%=@story.id.to_s%>', {asynchronous:true, evalScripts:true, onLoaded:function(request){$('loading<%=@story.id.to_s%>').hide();}, onLoading:function(request){$('loading<%=@story.id.to_s%>').show();}, parameters:'authenticity_token=' + encodeURIComponent('1RIoVZEKhS7+X103H1voFXmi8CKXmIznFOQvg3QJ7rI=')}); _gaq.push(['_trackEvent', 'Vote', 'Clic', 'Lien texte article']); return false;">Voter</a></span></li>
 <li>   <%= image_tag "ajax-loader.gif", :style => "display: none;", :id => "loading#{@story.id}" %></li>
 <li>&nbsp;</li>
 <li>&nbsp;</li>
