@@ -12,6 +12,7 @@ has_many :votes
 
 attr_accessor :score
 attr_accessor :rules
+attr_accessor :upd
 
   HUMANIZED_ATTRIBUTES = {
     :snip => "Résumé" , :url => "URL de l'article" , :category => "Catégorie" , :rules => ""
@@ -27,7 +28,7 @@ validates_length_of :titre, :maximum=>100 , :if => :titre?
 validates_format_of :url, :with => /http:\/\// , :if => :url?
 validates_length_of :snip, :minimum=>150 , :if => :snip?
 validates_length_of :snip, :maximum=>600 , :if => :snip?
-validate :lessthan1hr
+validate :lessthan1hr, :unless => :skip_delay
 validates_acceptance_of :rules
 
 def self.prettyurl (titre)
@@ -55,6 +56,12 @@ unless !dernierpost || dernierpost.poster == "rorschach"
 if (Time.now.to_i/60)-(dernierpost.created_at.to_i/60) < 60
 errors.add(:delai)
 end
+end
+end
+
+def skip_delay
+if self.upd == 1
+true
 end
 end
 

@@ -55,6 +55,7 @@ end
 
 def edit
 @story = Story.find(params[:id])
+@story.upd = 1
 
 
    if request.post?
