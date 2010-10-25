@@ -43,7 +43,7 @@ def hours_since_created(story)
 end
 
 def score(hrs , votes)
-votes/((hrs+2)**1.5)
+(votes+1)/((hrs+2)**1.5)
 end
 
 
