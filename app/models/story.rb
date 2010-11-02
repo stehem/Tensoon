@@ -37,7 +37,7 @@ Unicode::normalize_KD("-"+titre+"-").downcase.gsub(/[^a-z0-9\s_-]+/,'').gsub(/[\
 end 
 
 def self.last10
-self.find(:all , :order => "created_at DESC" , :limit => "10")
+self.find(:all , :order => "created_at DESC" , :limit => "15")
 end
 
   def self.findtitre(storyid)

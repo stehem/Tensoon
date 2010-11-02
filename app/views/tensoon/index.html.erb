@@ -35,7 +35,7 @@ Votez un article pour le faire monter dans la page.
 
 <div class="infos">
 <%= "Posté par " %><a href="/users/show/<%= f.poster %>" rel="nofollow"><%= f.poster %></a>
- <%= l f.created_at  %><br/>
+<%= "il y a " + time_ago_in_words(f.created_at)  %><br/>
 <%= "Source: "%><a href="<%= f.url %>"><%= f.source %></a><br/>
 
 

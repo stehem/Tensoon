@@ -136,18 +136,11 @@ style="display:none;"
 <div class="newstories">
 <div class="headerlast10">Derniers articles</div>
 <% @last10.each do |f| %>
-<a href="/<%=f.id.to_s + f.prettytitre %>"><%= f.titre %></a><br/>
+<span class="latest_articles_icon">> </span><span class="latest_articles_links"><a href="/<%=f.id.to_s + f.prettytitre %>"><%= f.titre %></a></span><br/>
 <% end %>
 </div>
 
-<div class="newstories">
-<div class="headerlast10">Derniers commentaires</div>
-<% @last10c.each do |f| %>
-<% unless !f or !f.story %>
-<a href="/<%= f.story.id.to_s + f.story.prettytitre %>"><%= truncate(Sanitize.clean(f.commentaire), :omission => "...", :length => 100) %></a> <br/>
-<% end %>
-<% end %>
-</div>
+
 
 
 
