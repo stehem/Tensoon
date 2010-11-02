@@ -13,7 +13,7 @@
  <%= f.label :url , "URL de l'article" %><br/>
  <%= f.text_field :url %><br/>
  <%= f.label :snip , "Résumé" %><br/>
-<span class="formdetails">Présentez l'article en un minimum de 150 caractères (trois phrases), pas de copier/coller du contenu de l'article lui même.<br/>
+<span class="formdetails">Présentez l'article en un minimum de 150 caractères (trois phrases) et un maximum de 600.<br/>
  <%= f.text_area :snip , :size => "60x3" %><br/>
  <%= f.label :category , "Categorie" %><br/>
  <%= f.select(:category , [nil, 'SEO','PPC', 'Social Media', 'Analytics', 'Display', 'Usabilité', 'Affiliation']) %><br/><br/>
