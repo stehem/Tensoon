@@ -30,6 +30,7 @@ validates_length_of :snip, :minimum=>150 , :if => :snip?
 validates_length_of :snip, :maximum=>600 , :if => :snip?
 validate :lessthan1hr, :unless => :skip_delay
 validates_acceptance_of :rules
+validates_format_of :url, :with => /^((?!decoration-1000deco|mega-phone).)*$/
 
 def self.prettyurl (titre)
 require 'unicode'
